@@ -51,4 +51,26 @@ export default class BikeController {
             res.status(400).send(error.message)
         }
     }
+
+    public getAllProducts = async(req: Request, res: Response) => {
+        try {
+            const result = await this.bikeBusiness.getAllProducts()
+
+            res.status(200).send(result)
+        } catch (error: any) {
+            res.status(400).send(error.message)
+        }
+    }
+
+    public getByColor = async(req: Request, res: Response) => {
+        try {
+            const input = req.params.color
+
+            const result = await this.bikeBusiness.getByColor(input)
+
+            res.status(200).send(result)
+        } catch (error: any) {
+            res.status(400).send(error.message)
+        }
+    }
 }

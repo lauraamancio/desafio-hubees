@@ -2,11 +2,11 @@ POST http://localhost:3003/bikes/cadastro
 Content-Type: application/json
 
 {
-    "color": "Preto",
+    "color": "Verde",
     "brand": "Caloi",
-    "gear_speed": 14,
-    "model": "Vulcan",
-    "price": 1975
+    "gear_speed": 12,
+    "model": "Urban",
+    "price": 1670
 }
 
 ###
@@ -19,3 +19,9 @@ Content-Type: application/json
 {
     "price": "hahaha"
 }
+
+###
+GET http://localhost:3003/bikes
+
+###
+GET http://localhost:3003/bikes/verde

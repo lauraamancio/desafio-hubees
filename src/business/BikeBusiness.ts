@@ -62,4 +62,29 @@ export default class BikeBusiness {
             throw new Error(error.message)
         }
     }
+
+    public getAllProducts = async() => {
+        try {
+            const result = await this.bikeData.getAllBikes()
+            return result
+        } catch (error: any) {
+            throw new Error(error.message)
+        }
+    }
+
+    public getByColor = async(param: string) => {
+        try {
+            const color = param
+            if(!color){
+                throw new Error("digite uma cor para filtrar")
+            }
+            const result= await this.bikeData.getByColor(color)
+            if(result.length === 0){
+                throw new Error("Não temos bicicletas desta cor")
+            }
+            return result
+        } catch (error: any) {
+            throw new Error(error.message)
+        }
+    }
 }

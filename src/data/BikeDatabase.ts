@@ -33,4 +33,25 @@ export default class BikeDatabase extends BaseDatabase {
             throw new Error(error.sqlmessage || error.message)
         }
     }
+
+    public async getAllBikes(){
+        try {
+            const result = await BaseDatabase.connection(this.TABLE_NAME)
+            .select('*')
+            return result
+        } catch (error: any) {
+            throw new Error(error.sqlmessage || error.message)
+        }
+    }
+
+    public async getByColor(color: string): Promise<BikeModel[]> {
+        try {
+            const result = await BaseDatabase.connection(this.TABLE_NAME)
+            .select('*')
+            .where('color', 'like', `%${color}%`)
+            return result
+        } catch (error: any) {
+            throw new Error(error.sqlmessage || error.message)
+        }
+    }
 }
