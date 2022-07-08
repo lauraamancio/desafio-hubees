@@ -1,0 +1,21 @@
+POST http://localhost:3003/bikes/cadastro
+Content-Type: application/json
+
+{
+    "color": "Preto",
+    "brand": "Caloi",
+    "gear_speed": 14,
+    "model": "Vulcan",
+    "price": 1975
+}
+
+###
+DELETE http://localhost:3003/bikes/81a63c8a-5ce7-4211-82e0-f068cdd56a4e
+
+###
+PUT http://localhost:3003/bikes/details/6d5ff5e6-37e3-4971-b4ea-aa43d29d58c6
+Content-Type: application/json
+
+{
+    "price": "hahaha"
+}
