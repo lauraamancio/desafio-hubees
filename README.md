@@ -1,4 +1,4 @@
-<h1 align="center"> :bike: Desafio BackEnd Hubees: Hubees's Bikes :bike:</h1>
+<h1 align="center"> :bike: Desafio BackEnd Hubees :bike:</h1>
 
 <br>
 
