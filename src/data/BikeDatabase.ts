@@ -14,7 +14,7 @@ export default class BikeDatabase extends BaseDatabase {
         }
     }
 
-    public async deleteBike(id: string) {
+    public async deleteBike(id: string): Promise<void> {
         try {
             await BaseDatabase.connection(this.TABLE_NAME)
             .delete()
@@ -24,7 +24,7 @@ export default class BikeDatabase extends BaseDatabase {
         }
     }
 
-    public async changePrice(price: inputChangePriceDTO, id: string) {
+    public async changePrice(price: inputChangePriceDTO, id: string): Promise<void> {
         try {
             await BaseDatabase.connection(this.TABLE_NAME)
             .update(price)
@@ -34,7 +34,7 @@ export default class BikeDatabase extends BaseDatabase {
         }
     }
 
-    public async getAllBikes(){
+    public async getAllBikes(): Promise<BikeModel[]>{
         try {
             const result = await BaseDatabase.connection(this.TABLE_NAME)
             .select('*')
@@ -49,6 +49,17 @@ export default class BikeDatabase extends BaseDatabase {
             const result = await BaseDatabase.connection(this.TABLE_NAME)
             .select('*')
             .where('color', 'like', `%${color}%`)
+            return result
+        } catch (error: any) {
+            throw new Error(error.sqlmessage || error.message)
+        }
+    }
+
+    public async getByValue(): Promise<BikeModel[]> {
+        try {
+            const result = await BaseDatabase.connection(this.TABLE_NAME)
+            .select('*')
+            .orderBy('price', 'ASC')
             return result
         } catch (error: any) {
             throw new Error(error.sqlmessage || error.message)

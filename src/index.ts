@@ -12,6 +12,7 @@ const bikeController = new BikeController(bikeBusiness)
 
 app.post("/bikes/cadastro", bikeController.addBike)
 app.delete("/bikes/:id", bikeController.deleteBike)
-app.put("/bikes/details/:id", bikeController.changePrice)
+app.put("/bikes/detalhes/:id", bikeController.changePrice)
 app.get("/bikes", bikeController.getAllProducts)
 app.get("/bikes/:color", bikeController.getByColor)
+app.get("/bikes/valores/crescente", bikeController.getByValue)

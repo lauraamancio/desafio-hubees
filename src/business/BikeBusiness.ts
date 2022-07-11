@@ -87,4 +87,16 @@ export default class BikeBusiness {
             throw new Error(error.message)
         }
     }
+
+    public getByValue = async() => {
+        try {
+            const result = await this.bikeData.getByValue()
+        if(result.length === 0){
+            throw new Error("Estamos sem Bikes no momento")
+        }
+        return result
+        } catch (error: any) {
+            throw new Error(error.message)
+        }
+    }
 }

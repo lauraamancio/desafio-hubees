@@ -2,26 +2,29 @@ POST http://localhost:3003/bikes/cadastro
 Content-Type: application/json
 
 {
-    "color": "Verde",
-    "brand": "Caloi",
-    "gear_speed": 12,
-    "model": "Urban",
-    "price": 1670
+    "color": "Preto",
+    "brand": "GTS",
+    "gear_speed": 21,
+    "model": "Force",
+    "price": 4530
 }
 
 ###
-DELETE http://localhost:3003/bikes/81a63c8a-5ce7-4211-82e0-f068cdd56a4e
+DELETE http://localhost:3003/bikes/fc95c3f6-5a03-47a2-83b5-e4ed591af8e5
 
 ###
-PUT http://localhost:3003/bikes/details/6d5ff5e6-37e3-4971-b4ea-aa43d29d58c6
+PUT http://localhost:3003/bikes/detalhes/ddb351e4-ef5f-4a29-8e46-842e02cbab35
 Content-Type: application/json
 
 {
-    "price": "hahaha"
+    "price": 1400
 }
 
 ###
 GET http://localhost:3003/bikes
 
 ###
-GET http://localhost:3003/bikes/verde
+GET http://localhost:3003/bikes/rosa
+
+###
+GET http://localhost:3003/bikes/valores/crescente
