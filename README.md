@@ -1,8 +1,8 @@
-<h1 align="center"> Desafio BackEnd Hubees </h1>
+<h1 align="center"> :bike: Desafio BackEnd Hubees: Hubees's Bikes :bike:</h1>
 
 <br>
 
-API construida para ser utilizada como sistema interno de uma loja de bicicletas.
+API construída para ser utilizada como sistema interno de uma loja de bicicletas.
 
 ## ⚙️ Funções e endpoints desenvolvidos:
 
